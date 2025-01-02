@@ -133,3 +133,15 @@ input#amount_tendered:disabled
 {
 	margin-bottom: 5px;
 }
+ HEAD
+
+
+table.mpesa-payment-details {
+	font-size: 16px;
+}
+
+table.mpesa-payment-details tr td:first-child {
+	text-align: right;
+	padding-right:10px
+}
+ mpesa/mpesa-tab-in-config-view

@@ -1,3 +1,4 @@
+HEAD
 # Dependency directories
 node_modules
 vendor
@@ -82,3 +83,21 @@ auth.json
 /app/Database/database.sql
 /writable/cache/settings
 /.env.bak
+
+.idea
+vendor
+UPGRADE.txt
+WHATS_NEW.txt
+INSTALL.md
+docker*
+Dockerfile
+import_customers.csv
+public/bower_components
+public/images
+public/uploads
+node_modules
+cypress/integration/examples
+application/tests/build
+application/tests/.phpunit.result.cache
+application/logs
+mpesa/mpesa-tab-in-config-view

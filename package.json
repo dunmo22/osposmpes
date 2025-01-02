@@ -1,4 +1,5 @@
 {
+ HEAD
 	"name": "@opensourcepos/opensourcepos",
 	"version": "3.4.0",
 	"description": "Open Source Point of Sale is a web based point of sale system written in the PHP language. It uses MySQL as the data storage back-end and has a simple user interface.",
@@ -78,4 +79,27 @@
 		"readable-stream": "^4.4.2",
 		"stream-series": "^0.1.1"
 	}
+
+  "name": "opensourcepos",
+  "version": "1.0.0",
+  "description": "[![Download](https://api.bintray.com/packages/jekkos/opensourcepos/opensourcepos/images/download.svg?version=3.3.2) ](https://bintray.com/jekkos/opensourcepos/opensourcepos/3.3.2/link) [![Build Status](https://travis-ci.org/opensourcepos/opensourcepos.svg?branch=master)](https://travis-ci.org/opensourcepos/opensourcepos) [![Join the chat at https://gitter.im/opensourcepos](https://badges.gitter.im/jekkos/opensourcepos.svg)](https://gitter.im/opensourcepos?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![devDependency Status](https://david-dm.org/jekkos/opensourcepos/dev-status.svg)](https://david-dm.org/jekkos/opensourcepos#info=dev) [![GitHub version](https://badge.fury.io/gh/jekkos%2Fopensourcepos.svg)](https://badge.fury.io/gh/jekkos%2Fopensourcepos) [![Translation status](http://weblate.jpeelaer.net/widgets/ospos/-/svg-badge.svg)](http://weblate.jpeelaer.net/engage/ospos/?utm_source=widget)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^4.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnGachihi/ospos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnGachihi/ospos/issues"
+  },
+  "homepage": "https://github.com/johnGachihi/ospos#readme"
+ mpesa/mpesa-tab-in-config-view
 }

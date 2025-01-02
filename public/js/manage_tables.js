@@ -12,6 +12,7 @@
 
 	var submit = function(button_id) {
 		return function(dlog_ref) {
+ HEAD
 			const form = $('form', dlog_ref.$modalBody).first();
 			const validator = form.data('validator');
 			const submitted = validator && validator.formSubmitted;
@@ -23,6 +24,12 @@
 				form.submit();
 
 				validator.valid() && $('#submit').prop('disabled', true).css('opacity', 0.5);
+
+			btn_id = button_id;
+			dialog_ref = dlog_ref;
+			if (button_id == 'submit') {
+				$('form', dlog_ref.$modalBody).first().submit();
+ mpesa/mpesa-tab-in-config-view
 			}
 			return false;
 		}
@@ -208,6 +215,7 @@
 		options = _options;
 		enable_actions = enable_actions(options.enableActions);
 		load_success = load_success(options.onLoadSuccess);
+ HEAD
 		$('#table')
 			.addClass("table-striped")
 			.addClass("table-bordered")
@@ -220,12 +228,25 @@
 			sidePagination: 'server',
 			selectItemName: 'btSelectItem',
 			pageSize: options.pageSize,
+
+		$('#table').bootstrapTable($.extend(options, {
+			columns: options.headers,
+			stickyHeader: true,
+			url: options.resource + '/search',
+			sidePagination: 'server',
+			pageSize: options.pageSize,
+			striped: true,
+ mpesa/mpesa-tab-in-config-view
 			pagination: true,
 			search: options.resource || false,
 			showColumns: true,
 			clickToSelect: true,
 			showExport: true,
+ HEAD
 			exportDataType: 'basic',
+
+			exportDataType: 'all',
+ mpesa/mpesa-tab-in-config-view
 			exportTypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'pdf'],
 			exportOptions: {
 				fileName: options.resource.replace(/.*\/(.*?)$/g, '$1')

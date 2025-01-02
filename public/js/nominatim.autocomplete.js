@@ -18,6 +18,7 @@
 		        return false;
 			}
 			return true;
+ HEAD
 		};(function($) {
 	
 	function http_s(url)
@@ -38,6 +39,8 @@
 		        return false;
 			}
 			return true;
+
+ mpesa/mpesa-tab-in-config-view
 		};
 	};
 
@@ -150,6 +153,7 @@
 	
 	window['nominatim'] = nominatim;
 	
+ HEAD
 })(jQuery);
 	};
 
@@ -263,3 +267,6 @@
 	window['nominatim'] = nominatim;
 	
 })(jQuery);
+
+})(jQuery);
+ mpesa/mpesa-tab-in-config-view
