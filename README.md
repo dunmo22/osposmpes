@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/opensourcepos/opensourcepos/master/branding/emblem.svg" alt="Open Source Point of Sale Logo" width="auto" height="200"></p>
+<p align="center"><img src="branding/emblem.svg" alt="Open Source Point of Sale Logo" width="auto" height="200"></p>
 <h3 align="center">Open Source Point of Sale</h3>
 
 <p align="center">
@@ -8,17 +8,17 @@
 </p>
 
 <p align="center">
-<a href="https://app.travis-ci.com/opensourcepos/opensourcepos" target="_blank"><img src="https://api.travis-ci.com/opensourcepos/opensourcepos.svg?branch=master" alt="Build Status"></a>
-<a href="https://app.gitter.im/#/room/#opensourcepos_Lobby:gitter.im?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" target="_blank"><img src="https://badges.gitter.im/jekkos/opensourcepos.svg" alt="Join the chat at https://app.gitter.im"></a>
-<a href="https://badge.fury.io/gh/opensourcepos%2Fopensourcepos" target="_blank"><img src="https://badge.fury.io/gh/opensourcepos%2Fopensourcepos.svg" alt="Project Version"></a>
-<a href="https://translate.opensourcepos.org/engage/opensourcepos/?utm_source=widget" target="_blank"><img src="https://translate.opensourcepos.org/widgets/opensourcepos/-/svg-badge.svg" alt="Translation Status"></a>
+<a href="https://travis-ci.org/opensourcepos/opensourcepos" target="_blank"><img src="https://travis-ci.com/opensourcepos/opensourcepos.svg?branch=master" alt="Build Status"></a>
+<a href="https://gitter.im/opensourcepos?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" target="_blank"><img src="https://badges.gitter.im/jekkos/opensourcepos.svg" alt="Join the chat at https://gitter.im/opensourcepos"></a>
+<a href="https://badge.fury.io/gh/jekkos%2Fopensourcepos" target="_blank"><img src="https://badge.fury.io/gh/jekkos%2Fopensourcepos.svg" alt="Project Version"></a>
+<a href="http://translate.opensourcepos.org/engage/opensourcepos/?utm_source=widget" target="_blank"><img src="http://translate.opensourcepos.org/widgets/opensourcepos/-/svg-badge.svg" alt="Translation Status"></a>
 </p>
 
 ## 👋 Introduction
 
-Open Source Point of Sale is a web-based point of sale system. The application is written in PHP, uses MySQL (or MariaDB) as the data storage back-end, and has a simple but intuitive user interface.
+Open Source Point of Sale is a web-based point of sale system. The application is written in PHP, it uses MySQL (or MariaDB) as data storage back-end and has a simple but intuitive user interface.
 
-The latest `3.4` version is a complete overhaul of the original software. It uses CodeIgniter 4 as a framework and is based on Bootstrap 3 using Bootswatch themes. Along with improved functionality and security.
+The latest `3.x` version is a complete overhaul of the original software. It uses CodeIgniter 3 as a framework and is based on Bootstrap 3 using Bootswatch themes. Along with improved functionality and security.
 
 The features include:
 
@@ -40,8 +40,8 @@ The features include:
 - Messaging (SMS)
 - Multilanguage
 - Selectable Bootstrap based UI theme with Bootswatch
-- MailChimp integration
-- Optional Google reCAPTCHA to protect the login page from brute force attacks
+- Mailchimp integration
+- Optional Google reCAPTCHA to protect login page from brute force attacks
 - GDPR ready
 
 ## 🧪 Live Demo
@@ -70,7 +70,7 @@ For more information and recommendations on support hardware, like receipt print
 
 ## ✨ Contributing
 
-Everyone is more than welcome to help us improve this project. If you think you've got something to help us go forward, feel free to open a [pull request]() or join the conversation on [Element](https://app.gitter.im/#/room/#opensourcepos_Lobby:gitter.im).
+Everyone is more than welcome to help us improve this project. If you think you've got something to help us go forward, feel free to open a [pull request]().
 
 Want to help translate Open Source Point of Sale in your language? You can find [our Weblate here](https://translate.opensourcepos.org), sign up, and start translating. You can subscribe to different languages to receive a notification once a new string is added or needs updating. Have a look at our [guidelines](https://github.com/opensourcepos/opensourcepos/wiki/Adding-translations) below to help you get started.
 
@@ -82,7 +82,7 @@ Before creating a new issue, you'll need copy and include the info under the `Sy
 
 If you're reporting a potential security issue, please refer to our security policy found in the [SECURITY.md](SECURITY.md) file.
 
-NOTE: If you're running non-release code, please make sure you always run the latest database upgrade script and download the latest master code.
+NOTE: If you're running non-release code, please make sure you always run the latest database upgrade script and you download the latest master code.
 
 ## 📖 FAQ
 
@@ -90,7 +90,7 @@ NOTE: If you're running non-release code, please make sure you always run the la
 
 - If at login time you read `The installation is not correct, check your php.ini file.`, please check the error_log in `public` folder to understand what's wrong and make sure you read the [INSTALL.md](INSTALL.md). To know how to enable `error_log`, please read the comment in [issue #1770](https://github.com/opensourcepos/opensourcepos/issues/1770#issuecomment-355177943).
 
-- If you installed your OSPOS under a web server subdir, please edit `public/.htaccess` and go to the lines with the comments `if in web root` or `if in subdir`, uncomment one and replace `<OSPOS path>` with your path, and follow the instruction on the second comment line. If you face more issues, please read [issue #920](https://github.com/opensourcepos/opensourcepos/issues/920) for more information.
+- If you installed your OSPOS under a web server subdir, please edit `public/.htaccess` and go to the lines with the comments `if in web root` or `if in subdir`, uncomment one and replace `<OSPOS path>` with your path and follow the instruction on the second comment line. If you face more issues, please read [issue #920](https://github.com/opensourcepos/opensourcepos/issues/920) for more information.
 
 - Apache server configurations are SysAdmin issues and not strictly related to OSPOS. Please make sure you can show a "Hello world" HTML page before pointing to OSPOS public directory. Make sure `.htaccess` is correctly configured.
 
@@ -98,11 +98,11 @@ NOTE: If you're running non-release code, please make sure you always run the la
 
 - If you install OSPOS in Docker behind a proxy that performs `ssloffloading`, you can enable the URL generated to be HTTPS instead of HTTP, by activating the environment variable `FORCE_HTTPS = 1`.
 
-- If you install OSPOS behind a proxy and OSPOS constantly drops your session, consider whitelisting the proxy IP address by setting `$config['proxy_ips'] = '<proxy ip>';` in the [main PHP config file](https://github.com/opensourcepos/opensourcepos/blob/master/application/config/config.php). In extreme instances, changing `$config['sess_match_ip'] = true;` to `FALSE` may also help.
-
 - If you have suhosin installed and face an issue with CSRF, please make sure you read [issue #1492](https://github.com/opensourcepos/opensourcepos/issues/1492).
 
-- PHP `≥ 8.1` is required to run this app.
+- PHP 8.0 is not currently supported, see [issue #3051](https://github.com/opensourcepos/opensourcepos/issues/3051).
+
+- PHP 5.5 and 5.6 are no longer supported due to the fact that they have been deprecated and not safe to use from security point of view.
 
 ## 🏃 Keep the Machine Running
 
@@ -111,13 +111,13 @@ If you like our project, please consider buying us a coffee through the button b
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MUN6AEG7NY6H8)\
 Or refer to the [FUNDING.yml](.github/FUNDING.yml) file.
 
-If you choose to deploy OSPOS in the cloud, you can contribute to the project by using DigitalOcean and signing up through our referral link. You'll receive a [free $200, 60-day credit](https://m.do.co/c/ac38c262507b) if you run OSPOS in a DigitalOcean droplet through [our referral link](https://m.do.co/c/ac38c262507b).
+If you choose to deploy OSPOS in the cloud, you can contribute to the project by using DigitalOcean and signing up through our referral link. You'll receive a [free $100, 60-day credit](https://m.do.co/c/ac38c262507b) if you run OSPOS in a DigitalOcean droplet through [our referral link](https://m.do.co/c/ac38c262507b).
 
 ## 📄 License
 
 Open Source Point of Sale is licensed under MIT terms with an important addition:
 
-The footer signature "© 2010 - _current year_ · opensourcepos.org · 3.x.x - _hash_" including the version, hash and link to our website MUST BE RETAINED, MUST BE VISIBLE IN EVERY PAGE and CANNOT BE MODIFIED.
+The footer signature "© 2010 - _current year_ · opensourcepos.org · 3.x.x - _hash_" including the version, hash and link our website MUST BE RETAINED, MUST BE VISIBLE IN EVERY PAGE and CANNOT BE MODIFIED.
 
 Also worth noting:
 
@@ -125,19 +125,19 @@ _The above copyright notice and this permission notice shall be included in all 
 
 For more details please read the [LICENSE](LICENSE) file.
 
-It's important to understand that although you are free to use the application, the copyright has to stay and the license agreement applies in all cases. Therefore, any actions like:
+It's important to understand that although you are free to use the application the copyright has to stay and the license agreement applies in all cases. Therefore any actions like:
 
 - Removing LICENSE and/or any license files is prohibited
 - Authoring the footer notice replacing it with your own or even worse claiming the copyright is absolutely prohibited
 - Claiming full ownership of the code is prohibited
 
-In short, you are free to use the application, but you cannot claim any property on it.
+In short, you are free to use the application but you cannot claim any property on it.
 
 Any person or company found breaching the license agreement might find a bunch of monkeys at the door ready to destroy their servers.
 
 ## 🙏 Credits
 
-| <div align="center">DigitalOcean</div>                                                                                                                                                                                                                                                    | <div align="center">JetBrains</div> | <div align="center">Travis CI</div> |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --- | --- |
-| <div align="center"><a href="https://www.digitalocean.com?utm_medium=opensource&utm_source=opensourcepos" target="_blank"><img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" alt="DigitalOcean Logo" height="50"></a></div> | <div align="center"><a href="https://www.jetbrains.com/idea/" target="_blank"><img src="https://github.com/opensourcepos/opensourcepos/assets/12870258/187f9bbe-4484-475c-9b58-5e5d5f931f09" alt="IntelliJ IDEA Logo" height="50"></a></div> | <div align="center"><a href="https://www.travis-ci.com/" target="_blank"><img src="https://github.com/opensourcepos/opensourcepos/assets/12870258/71cc2b44-83af-4510-a543-6358285f43c6" alt="Travis CI Logo" height="50"></a></div> |
-| Many thanks to [Digital Ocean](https://www.digitalocean.com) for providing the project with hosting credits                                                                                                                                                                               | Many thanks to [JetBrains](https://www.jetbrains.com/) for providing a free license of [IntelliJ IDEA](https://www.jetbrains.com/idea/) to kindly support the development of OSPOS. | Many thanks to [Travis CI](https://www.travis-ci.com/) for providing a free continuous integration service for open source projects. |
+| <div align="center">JetBrains</div> | <div align="center">Travis CI</div> |
+|--- | --- |
+| <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/IntelliJ_IDEA_Icon.svg" alt="IntelliJ IDEA Logo" height="50"></div> | <div align="center"><img src="https://secrethub.io/img/travis-ci.svg" alt="Travis CI Logo" height="50"></div> |
+| Many thanks to [JetBrains](https://www.jetbrains.com/) for providing a free license of [IntelliJ IDEA](https://www.jetbrains.com/idea/) to kindly support the development of OSPOS. | Many thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects. |

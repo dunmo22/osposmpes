@@ -1,5 +1,3 @@
-* { margin: 0; padding: 0; }
-
 html, body
 {
 	height: 100%;
@@ -16,12 +14,6 @@ a.none
 	font-size: 12px;
 	background: #182735;
 	padding: 0.2em;
-}
-
-@media (min-width:1300px) {
-	.container {
-		width: 1400px;
-	}
 }
 
 .navbar

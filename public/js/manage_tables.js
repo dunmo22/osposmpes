@@ -21,7 +21,8 @@
 
 			if (button_id == 'submit' && (!submitted && btn_id != "btnNew")) {
 				form.submit();
-				$('#submit').prop('disabled', true).css('opacity', 0.5);
+
+				validator.valid() && $('#submit').prop('disabled', true).css('opacity', 0.5);
 			}
 			return false;
 		}
@@ -207,13 +208,14 @@
 		options = _options;
 		enable_actions = enable_actions(options.enableActions);
 		load_success = load_success(options.onLoadSuccess);
-		const export_suffix = new Date().toISOString().slice(0, 16).replace(/(-|\s*|T|:)*/g,"");
 		$('#table')
 			.addClass("table-striped")
 			.addClass("table-bordered")
 			.bootstrapTable($.extend(options, {
 			columns: options.headers,
 			stickyHeader: true,
+			stickyHeaderOffsetLeft: $('#table').offset().right + 'px',
+			stickyHeaderOffsetRight: $('#table').offset().right + 'px',
 			url: options.resource + '/search',
 			sidePagination: 'server',
 			selectItemName: 'btSelectItem',
@@ -226,7 +228,7 @@
 			exportDataType: 'basic',
 			exportTypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'pdf'],
 			exportOptions: {
-				fileName: options.resource.replace(/.*\/(.*?)$/g, '$1') + "_" + export_suffix
+				fileName: options.resource.replace(/.*\/(.*?)$/g, '$1')
 			},
 			onPageChange: function(response) {
 				load_success(response);
@@ -255,7 +257,7 @@
 			iconSize: 'sm',
 			silentSort: true,
 			paginationVAlign: 'bottom',
-			escape: true
+			escape: false
 		}));
 		enable_actions();
 		init_delete();
@@ -282,16 +284,16 @@
 
 	var submit_handler = function(url) {
 		return function (resource, response) {
-			var id = response.id !== undefined ? response.id.toString() : "";
+			var id = response.id;
 			if (!response.success) {
-				$.notify($.text(response.message).html(), { type: 'danger' });
+				$.notify(response.message, { type: 'danger' });
 			} else {
 				var message = response.message;
 				var selector = rows_selector(response.id);
 				var rows = $(selector.join(",")).length;
 				if (rows > 0 && rows < 15) {
-					var ids = id.split(":");
-					$.get([url || resource + '/row', id].join("/"), {}, function (response) {
+					var ids = response.id.split(":");
+					$.get([url || resource + '/get_row', id].join("/"), {}, function (response) {
 						$.each(selector, function (index, element) {
 							var id = $(element).data('uniqueid');
 							table().updateByUniqueId({id: id, row: response[id] || response});
