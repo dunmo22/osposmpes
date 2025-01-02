@@ -74,5 +74,17 @@
 	},
 	"scripts": {
 		"test": "phpunit"
+  "name": "john-gachihi/opensourcepos",
+  "require-dev": {
+  },
+  "require": {
+    "phpunit/phpunit": "8.5.2",
+    "kenjis/ci-phpunit-test": "2.x@dev",
+    "safaricom/mpesa": "^1.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-bcmath": "*",
+    "ext-intl": "*"
+mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 	}
 }

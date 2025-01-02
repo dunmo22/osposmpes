@@ -97,6 +97,8 @@
 				source: function (request, response) {
 					var params = default_params(key, value.response && value.response.field, options.language);
 					var request_params = {};
+					var request_params = {q: request.term};
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 					options.extra_params && $.each(options.extra_params, function(key, param) {
 						request_params[key] = typeof param == "function" ? param() : param;
 					});
@@ -115,6 +117,8 @@
 				},
 				minChars:3,
 				delay:1000,
+				delay:500,
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 				appendTo: '.modal-content',
 				select: handle_field_completion
 			});

@@ -1,5 +1,6 @@
 * { margin: 0; padding: 0; }
 
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 html, body
 {
 	height: 100%;
@@ -15,8 +16,6 @@ a.none
 	color: #eee;
 	font-size: 12px;
 	background: #182735;
-	padding: 0.2em;
-}
 
 @media (min-width:1300px) {
 	.container {
@@ -24,6 +23,7 @@ a.none
 	}
 }
 
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 .navbar
 {
 	border-radius: 0;
