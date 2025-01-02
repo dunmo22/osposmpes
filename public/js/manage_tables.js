@@ -22,6 +22,12 @@
 			if (button_id == 'submit' && (!submitted && btn_id != "btnNew")) {
 				form.submit();
 				$('#submit').prop('disabled', true).css('opacity', 0.5);
+
+			btn_id = button_id;
+			dialog_ref = dlog_ref;
+			if (button_id == 'submit') {
+				$('form', dlog_ref.$modalBody).first().submit();
+mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 			}
 			return false;
 		}
@@ -212,12 +218,18 @@
 			.addClass("table-striped")
 			.addClass("table-bordered")
 			.bootstrapTable($.extend(options, {
+
+		$('#table').bootstrapTable($.extend(options, {
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 			columns: options.headers,
 			stickyHeader: true,
 			url: options.resource + '/search',
 			sidePagination: 'server',
 			selectItemName: 'btSelectItem',
 			pageSize: options.pageSize,
+			pageSize: options.pageSize,
+			striped: true,
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 			pagination: true,
 			search: options.resource || false,
 			showColumns: true,
@@ -227,6 +239,11 @@
 			exportTypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'pdf'],
 			exportOptions: {
 				fileName: options.resource.replace(/.*\/(.*?)$/g, '$1') + "_" + export_suffix
+			exportDataType: 'all',
+			exportTypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'pdf'],
+			exportOptions: {
+				fileName: options.resource.replace(/.*\/(.*?)$/g, '$1')
+mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 			},
 			onPageChange: function(response) {
 				load_success(response);
@@ -255,7 +272,10 @@
 			iconSize: 'sm',
 			silentSort: true,
 			paginationVAlign: 'bottom',
+
 			escape: true
+			escape: false
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 		}));
 		enable_actions();
 		init_delete();
@@ -282,16 +302,25 @@
 
 	var submit_handler = function(url) {
 		return function (resource, response) {
+
 			var id = response.id !== undefined ? response.id.toString() : "";
 			if (!response.success) {
 				$.notify($.text(response.message).html(), { type: 'danger' });
+			var id = response.id;
+			if (!response.success) {
+				$.notify(response.message, { type: 'danger' });
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 			} else {
 				var message = response.message;
 				var selector = rows_selector(response.id);
 				var rows = $(selector.join(",")).length;
 				if (rows > 0 && rows < 15) {
+
 					var ids = id.split(":");
 					$.get([url || resource + '/row', id].join("/"), {}, function (response) {
+					var ids = response.id.split(":");
+					$.get([url || resource + '/get_row', id].join("/"), {}, function (response) {
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 						$.each(selector, function (index, element) {
 							var id = $(element).data('uniqueid');
 							table().updateByUniqueId({id: id, row: response[id] || response});

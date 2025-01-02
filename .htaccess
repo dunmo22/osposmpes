@@ -2,6 +2,7 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+
     RewriteCond %{REQUEST_URI} !^public$
     RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge [NC]
     RewriteRule "^(.*)$" "/public/" [R=301,L]
@@ -10,11 +11,19 @@
     # change the following line to match the subfolder you need. Uncomment
     # the line below and comment the line above.
     #RewriteRule "^(.*)$"  "/[SUBDIRECTORY]/public/" [R=301,L]
+
+    RewriteCond %{REQUEST_URI} !^public$
+    RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge [NC]
+    RewriteRule "^(.*)$" "/public/" [R=301,L]
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 </IfModule>
 
 # disable directory browsing
 # For security reasons, Option all cannot be overridden.
+
 Options +SymLinksIfOwnerMatch -Indexes
+Options +ExecCGI +Includes +IncludesNOEXEC +SymLinksIfOwnerMatch -Indexes
+mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 
 # prevent folder listing
 IndexIgnore *
@@ -23,6 +32,8 @@ IndexIgnore *
   Header always set X-Frame-Options "SAMEORIGIN"
 </Ifmodule>
 
+# Apache 2.4
+ mpesa/dependabot/npm_and_yarn/ajv-6.12.6
 <IfModule authz_core_module>
   # secure htaccess file
   <Files .htaccess>
@@ -44,3 +55,36 @@ IndexIgnore *
     Require all denied
   </FilesMatch>
 </IfModule>
+
+
+# Apache 2.2
+<IfModule !authz_core_module>
+  # secure htaccess file
+  <Files .htaccess>
+    Order allow,deny
+    Deny from all
+    Satisfy all
+  </Files>
+
+  # prevent access to PHP error log
+  <Files error_log>
+    Order allow,deny
+    Deny from all
+    Satisfy all
+  </Files>
+
+  # prevent access to LICENSE
+  <Files LICENSE>
+    Order allow,deny
+    Deny from all
+    Satisfy all
+  </Files>
+
+  # prevent access to csv, txt and md files
+  <FilesMatch "\.(csv|txt|md|yml|json|lock)$">
+    Order allow,deny
+    Deny from all
+    Satisfy all
+  </FilesMatch>
+</IfModule>
+mpesa/dependabot/npm_and_yarn/ajv-6.12.6

@@ -8,6 +8,10 @@
 #page-wrap { width: 100%; margin: 0 auto; max-width: 800px; }
 
 #page-wrap textarea { border: none; font-size: 14px; overflow: hidden; resize: none; }
+* { margin: 0; padding: 0; }
+/*body { font: 14px/1.4 Georgia, serif; }*/
+#page-wrap { width: 100%; margin: 0 auto; max-width: 800px; }
+
 #page-wrap table { border-collapse: collapse; }
 #page-wrap table td, #page-wrap table th { border: 1px solid black; padding: 5px; }
 #page-wrap table td { padding: 5px; }
@@ -40,6 +44,7 @@
 #items th { background: #eee; text-align: center; }
 #items textarea { width: 80px; height: 20px; }
 #items tr.item-row td { border: none; vertical-align: top; }
+#items tr.item-row td { border: 0; vertical-align: top; }
 #items td.description { width: 300px; }
 #items td.item-name { width: 175px; }
 #items td.item-description textarea { height: auto; width: 100%; }
@@ -50,6 +55,7 @@
 #items td.total-line textarea { height: 20px; width:150px; background: none; }
 #items td.balance { background: #eee; }
 #items td.blank { border: none; }
+#items td.blank { border: 0; }
 #items td.blank-bottom { border: 1px; }
 
 #terms { text-align: center; margin: 20px 0 0 0; }
